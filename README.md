@@ -1,4 +1,4 @@
-# POSTECH_CSE_HWs
+# POSTECH_CSED211_HWs
 
 My name is Daehyeon-Choi.
 I am undergraduate student of POSTECH, Department of Comupter Science & Engineering.
