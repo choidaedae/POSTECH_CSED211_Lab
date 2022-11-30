@@ -7,7 +7,7 @@
  *
  * Namgyu Park (namgyu.park@postech.ac.kr) is the lead person for this assignment.
  *
-*/
+ */
 
 #if 0
 LAB L1 INSTRUCTIONS :
@@ -23,7 +23,7 @@ LAB L1 INSTRUCTIONS :
 int bitNor(int x, int y) {
 	//to be implemented
 
-	return ~x & ~y; //µå¸ğ¸£°£ÀÇ ¹ıÄ¢¿¡ ÀÇÇØ 
+	return ~x & ~y; //ë“œëª¨ë¥´ê°„ì˜ ë²•ì¹™ì— ì˜í•´ 
 }/*
  *   #Homework1-2
  *   isZero - returns 1 if x == 0, and 0 otherwise
@@ -34,7 +34,7 @@ int bitNor(int x, int y) {
  */
 int isZero(int x) {
 	//to be implemented
-	return !x; // 0ÀÏ ¶© 1, 0ÀÌ¿ÜÀÇ ´Ù¸¥ ¼ö (true)ÀÏ ¶© 0 Ãâ·Â
+	return !x; // 0ì¼ ë• 1, 0ì´ì™¸ì˜ ë‹¤ë¥¸ ìˆ˜ (true)ì¼ ë• 0 ì¶œë ¥
 }/*
  *   #Homework1-3
  *   addOK - Determine if can compute x+y without overflow
@@ -48,14 +48,14 @@ int addOK(int x, int y) {
 
 	//to be implemented
 	int sum = x + y;
-	int x_sign = (x >> 31) & 0x00000001; //xÀÇ ºÎÈ£ 
-	int y_sign = (y >> 31) & 0x00000001; //yÀÇ ºÎÈ£ 
-	int sum_sign = (sum >> 31) & 0x00000001; //sumÀÇ ºÎÈ£ 
+	int x_sign = (x >> 31) & 0x00000001; //xì˜ ë¶€í˜¸ 
+	int y_sign = (y >> 31) & 0x00000001; //yì˜ ë¶€í˜¸ 
+	int sum_sign = (sum >> 31) & 0x00000001; //sumì˜ ë¶€í˜¸ 
 
-	int xysame = !(x_sign^y_sign); //x¿Í yÀÇ ºÎÈ£°¡ ´Ù¸£¸é 0 return 
-	int xsumdiff = x_sign^sum_sign; //x¿Í sumÀÇ ºÎÈ£°¡ ´Ù¸£¸é 1 return 
+	int xysame = !(x_sign^y_sign); //xì™€ yì˜ ë¶€í˜¸ê°€ ë‹¤ë¥´ë©´ 0 return 
+	int xsumdiff = x_sign^sum_sign; //xì™€ sumì˜ ë¶€í˜¸ê°€ ë‹¤ë¥´ë©´ 1 return 
 
-	return !(xysame & xsumdiff); //x¿Í y°¡ °°°í x¿Í sum ºÎÈ£°¡ ´Ù¸¦ ¶§ 0 Ãâ·Â, ÀÌ¿ÜÀÇ »óÈ² (¿À¹öÇÃ·Î¿ì ¹ß»ı)ÇÒ ¶§ 1 Ãâ·Â 
+	return !(xysame & xsumdiff); //xì™€ yê°€ ê°™ê³  xì™€ sum ë¶€í˜¸ê°€ ë‹¤ë¥¼ ë•Œ 0 ì¶œë ¥, ì´ì™¸ì˜ ìƒí™© (ì˜¤ë²„í”Œë¡œìš° ë°œìƒ)í•  ë•Œ 1 ì¶œë ¥ 
 
 }/*
  *   #Homework1-4
@@ -68,10 +68,10 @@ int addOK(int x, int y) {
  */
 int absVal(int x) {
 	//to be implemented
-	int sign = x >> 31; // xÀÇ ºÎÈ£¸¸ »ì¸² 
+	int sign = x >> 31; // xì˜ ë¶€í˜¸ë§Œ ì‚´ë¦¼ 
 	int ans = x + sign; 
 	ans = ans ^ sign; 
-	return ans; //ans °ªÀ» return 
+	return ans; //ans ê°’ì„ return 
 }/*
  *   #Homework1-5
  *   logicalShift - shift x to the right by n, using a logical shift
@@ -84,9 +84,9 @@ int absVal(int x) {
 
 int logicalShift(int x, int n) {
 	//to be implemented
-	int temp = ((1 << 31) >> n) << 1; // shiftÇÑ ºÎºĞ±îÁö´Â 1, ³ª¸ÓÁö´Â 0ÀÎ temp ¸¸µê 
-	x = x >> n; // arithmetic shift ½ÇÇà 
-	return ~temp & x; //tempÀÇ ¹İÀü: shiftÇÑ ºÎºĞ±îÁö´Â 0, ³ª¸ÓÁö´Â 1ÀÌ¹Ç·Î xÀÇ shiftÇÑ ºÎºĞÀº ¸ğµÎ 0À¸·Î ¸¸µê(logical shift) 
+	int temp = ((1 << 31) >> n) << 1; // shiftí•œ ë¶€ë¶„ê¹Œì§€ëŠ” 1, ë‚˜ë¨¸ì§€ëŠ” 0ì¸ temp ë§Œë“¦ 
+	x = x >> n; // arithmetic shift ì‹¤í–‰ 
+	return ~temp & x; //tempì˜ ë°˜ì „: shiftí•œ ë¶€ë¶„ê¹Œì§€ëŠ” 0, ë‚˜ë¨¸ì§€ëŠ” 1ì´ë¯€ë¡œ xì˜ shiftí•œ ë¶€ë¶„ì€ ëª¨ë‘ 0ìœ¼ë¡œ ë§Œë“¦(logical shift) 
 	
 
 }
