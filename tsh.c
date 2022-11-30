@@ -240,7 +240,7 @@ int parseline(const char *cmdline, char **argv)
     strcpy(buf, cmdline);
     buf[strlen(buf)-1] = ' ';  /* replace trailing '\n' with space */
     while (*buf && (*buf == ' ')) /* ignore leading spaces */
-   buf++;
+    buf++;
 
     /* Build the argv list */
     argc = 0;
