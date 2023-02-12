@@ -89,7 +89,7 @@ int mm_init(void)
 {
 
     make_seg_list(); //make segragate list 
-
+    
     /*
     int i;
 
